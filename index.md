@@ -4,6 +4,13 @@ After the fall of the Bretton Woods agreement and the introduction
 of the [Petrodollar](https://en.wikipedia.org/wiki/Petrodollar_recycling) in
 the '70s, oil became one of the world's most strategic resources.  
 
+
+# Sources
+1. [Muchlinski et al., _Comparing Random Forest with Logistic Regression for Predicting Class-Imbalanced Civil War Onset Data_](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KRKWK8)
+1. [World Inequality Database](https://wid.world/)
+1. [UCDP/PRIO](https://ucdp.uu.se/)
+1. [World Income Inequality Database](https://www.wider.unu.edu/data)
+
 <!-- ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
