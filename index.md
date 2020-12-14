@@ -14,6 +14,10 @@ In the second section, we will take inspiration from _insert civil war paper_ , 
 
 In the third and final section, we will try to investigate the role of oil in the welloutburst on conflict. In particular, we will try to understand whether or not the large availability of oil in a country can influence the probability of a war outbreaking in that location.
 
+https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/EIA_petroleum_consumption_of_selected_nations_1960-2005.png/800px-EIA_petroleum_consumption_of_selected_nations_1960-2005.png
+
+https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Opecrev.gif/1280px-Opecrev.gif
+
 # Sources
 1. [Muchlinski et al., _Comparing Random Forest with Logistic Regression for Predicting Class-Imbalanced Civil War Onset Data_](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KRKWK8)
 1. [World Inequality Database](https://wid.world/)
