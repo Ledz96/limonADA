@@ -22,7 +22,13 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/EIA_petroleum_consumpt
 
 https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Opecrev.gif/1280px-Opecrev.gif
 
+![Gif](img/warmap.gif)
+![](img/oil_country_map.png)
+
 ## Section 1: The impact of oil on population well-being and social inequality
+
+![Heatmap](img/heatmap.png)
+
 
 ## Section 2: Let's look away from oil for a bit - predicting wars
 
