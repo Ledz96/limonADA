@@ -10,15 +10,25 @@ In this data story, we will therefore attempt to back this common perception up 
 
 ## What to expect
 
+In order to complete the aforementioned task, we have combined data from multiple datasets, gathering information over world countries in a timespan going from 1961 to 1999: this choice springs from the fact that this period represents a conosistent intersection between timespans of multiple dataset. 
+
 In the first section, we will use data provided by ... database to find out whether or not oil is correlated to social issues in a country. In particular, we will take into account factors such as illiteracy, life expectancy, and gini score. In case a correlation is found, we will then dive deeper, and wonder whether oil can be cause of these issues.
 
 In the second section, we will take inspiration from _insert civil war paper_ , and try to build a predictor for the presence of war in a country: this will serve the purpose of identifying the most influential variables for this event, as they will be needed for the following part.
 
-In the third and final section, we will try to investigate the role of oil in the welloutburst on conflict. In particular, we will try to understand whether or not the large availability of oil in a country can influence the probability of a war outbreaking in that location.
+In the third and final section, we will try to investigate the role of oil in the outburst of a conflict. In particular, we will try to understand whether or not the large availability of oil in a country can influence the probability of a war outbreaking in that location.
 
 https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/EIA_petroleum_consumption_of_selected_nations_1960-2005.png/800px-EIA_petroleum_consumption_of_selected_nations_1960-2005.png
 
 https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Opecrev.gif/1280px-Opecrev.gif
+
+## Section 1: The impact of oil on population well-being and social inequality
+
+## Section 2: Let's look away from oil for a bit - predicting wars
+
+## Section 3: Oil and likelihood of war in a country 
+
+## Conclusion: Is oil a cause of problems for a country?
 
 # Sources
 1. [Muchlinski et al., _Comparing Random Forest with Logistic Regression for Predicting Class-Imbalanced Civil War Onset Data_](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KRKWK8)
