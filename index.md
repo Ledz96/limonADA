@@ -64,7 +64,7 @@ The correlation with the Gini score is positive, suggesting that oil and fuel ov
 
 So, really, the question that we should be asking is: **given equal preconditions, does having oil make a country more likely to be involved in a war?**
 
-Again, this requires a few clarifications: we defined a country *being involved in a war* when it had a war *on its territory* in a given year. 
+Again, this requires a few clarifications: we defined a country as *being involved in a war* when it had a war *on its territory* in a given year. 
 
 
 ## Section 2: Let's look away from oil for a bit - predicting wars
