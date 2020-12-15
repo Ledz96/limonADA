@@ -22,12 +22,49 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/EIA_petroleum_consumpt
 
 https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Opecrev.gif/1280px-Opecrev.gif
 
-![Gif](img/warmap.gif)
-![](img/oil_country_map.png)
+**TODO: add heatmaps**
 
 ## Section 1: The impact of oil on population well-being and social inequality
 
+First of all, we should make a distinction between **oil-rich** and **oil-dependent** countries. We consider a country to be oil-rich if it simply has a lot of oil on its territory. Oil-dependent countries, however, are those in which a large portion of GDP (> 33%) depends on the sale of oil. Canada, for example, being among the [top-5 oil exporters](https://en.wikipedia.org/wiki/List_of_countries_by_oil_exports) in the world, is oil-rich, but not oil-dependent. Saudi Arabia is both.
+
+---
+
+With oil being a possible contributor to the so-called "[Resource Curse](https://en.wikipedia.org/wiki/Resource_curse)", it can bring great wealth to a country's people, but also conflicts and instability. Let's look at which countries were at war between 1961 and 2000. 
+
+
+![](img/warmap.gif)
+_Countries at war (light blue) between 1961 and 2000 (missing data in white)_
+
+To get a qualitative sense of whether wars in in the latter half of the previous century were mostly fought in oil-dependent countries, let's compare the above animation with the image below.
+
+![](img/oil_country_map.png)
+_Countries whose oil exports amount to more than 33% of their GDP (missing data in grey)._
+
+Is there an overlap? Yes, we can clearly see (as expected) some connections in the Middle East and North Africa, along with Venezuela, Angola and so on. In fact, it is hard to find an oil-dependent country (besides Norway) that *didn't* live through a conflict since the 1960s.
+
+Visual inspection is not enough to make conclusions, though, so let's warm up our statistical brain with a heat map (no pun intended), comparing the correlation of a few variables that affect the wealth and wellbeing of a population. Variables are defined for all given years, between 1961 and 2000.
+
+* `life`: life expectancy
+* `oil`: (categorical) whether oil exports accounted for more than 33% of GDP.
+* `fuelexp`: ratio of fuel exports over GDP.
+* `war`: (categorical) whether a country was at war.
+* `illiteracy`: illiteracy rate
+* `infant`: infant mortality
+* `intensity_level`: (categorical) intensity of the war, if any.
+* `cumulative_intensity`: (categorical) like `intensity_level`, but accumulated across years and capped at a maximum value.
+* `gini`: Gini score for the country, as a measure of income inequality.
+
 ![Heatmap](img/heatmap.png)
+_Statistical correlation between variables relating to wealth and wellbeing of a population._
+
+From the confusion matrix above we can immediately pick out some of the obvious correlations, like illiteracy and infant mortality with life expectancy. Oil and fuel exports, however, don't seem to correlate much with anything, except for each other (obviously) and the Gini score. 
+
+The correlation with the Gini score is positive, suggesting that oil and fuel overall lead to a slight improvement in a population's wellbeing. In the long term, this intuitively makes sense: if we look at a time span of four decades, it's unlikely that a country was at war for most of those years and, all other things being equal, it is probably better to *have* oil than to *not* have it.
+
+So, really, the question that we should be asking is: **given equal preconditions, does having oil make a country more likely to be involved in a war?**
+
+Again, this requires a few clarifications: we defined a country *being involved in a war* when it had a war *on its territory* in a given year. 
 
 
 ## Section 2: Let's look away from oil for a bit - predicting wars
