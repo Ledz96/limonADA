@@ -158,7 +158,8 @@ As we can see, the distributions of treatment and control groups became more sim
 
 After matching on propensity scores, we calculated the [Average Treatment Effect](https://en.wikipedia.org/wiki/Average_treatment_effect) (ATE).
 
-$$ATE = \frac{1}{N} \sum_i^N y_{treat}^{(i)} - y_{\neg treat}^{(i)}$$
+<!-- $$ATE = \frac{1}{N} \sum_i^N y_{treat}^{(i)} - y_{\neg treat}^{(i)}$$ -->
+<img src="img/ate.png" width=300 />
 
 Here $y$ represents whether or not a country was at war in a given year (`war` variable). $treat$ and $\neg treat$ indicate whether the country-year pair belongs to the treatment or control group. The ATE represents the average difference in outcome for all paired elements. If the treatment (`oil`/`fuelexp > 33`) causes war, then the ATE will be closer to 1. If it doesn't it will be closer to zero.
 
