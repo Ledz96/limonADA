@@ -88,6 +88,7 @@ We performed this analysis on most of the features that [*Muchlinski et al*](#da
 Given that historical data for countries' Gini scores is not always complete, we trained our model on a dataset with and without the `gini` feature. The table below shows our F1 scores for the two models: both are fairly high, so we can assume that our fit is accurate and that the features identified as most important are really meaningful.
 
 _F1 scores for both Random Forest models_
+
 | Without `gini` | With `gini` |
 |----------------|-------------|
 | 0.89           | 0.83        |
@@ -96,6 +97,7 @@ _F1 scores for both Random Forest models_
 In the case without the `gini` feature, we can see the classification in the table below. Unfortunately, the description for `lpopns` was not available, but it is likely a quantity related to the population size. Interestingly enough, the very first feature, `sxpnew`, *could* be related to oil exports, though we can't conclude this without looking more into detail.
 
 _Top features for the model without `gini`_
+
 | Feature   |   Importance | Description                                    |
 |:----------|-------------:|:-----------------------------------------------|
 | sxpnew    |    0.0655414 | Primary commodity exports/GDP                  |
@@ -108,6 +110,7 @@ _Top features for the model without `gini`_
 Below is the classification for the model *with* the `gini` feature. We can see a little bit of overlap with the previous model, though this time ethnic heterogeneity and illiteracy are considered to be the top predictors of war. Surprisingly, `gini` itself is not present in the table.
 
 _Top features for the model with `gini`_
+
 | Feature    |   Importance | Description                       |
 |:-----------|-------------:|:----------------------------------|
 | ehet       |    0.0551632 | Ethnic heterogeneity index        |
