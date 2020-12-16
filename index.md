@@ -179,7 +179,7 @@ _ATE results after propensity score matching. Confidence intervals were calculat
 |Without `gini`|`fuelexp > 33`|`intense_war`|0.26|0.181, 0.34|
 
 <!-- like skip -->\
-
+All ATE scores are above zero, even if we take the confidence intervals into account.
 ## Conclusion: Oil - Blessing or Curse?
 
 # Data Sources
