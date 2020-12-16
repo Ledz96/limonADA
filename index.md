@@ -162,7 +162,7 @@ $$ATE = \frac{1}{N} \sum_i^N y_{treat}^{(i)} - y_{\neg treat}^{(i)}$$
 
 Here $y$ represents whether or not a country was at war in a given year (`war` variable). $treat$ and $\neg treat$ indicate whether the country-year pair belongs to the treatment or control group. The ATE represents the average difference in outcome for all paired elements. If the treatment (`oil`/`fuelexp > 33`) causes war, then the ATE will be closer to 1. If it doesn't it will be closer to zero.
 
-We also performed a similar analysis on a new derived variable `intense_war`, which indicates whether or not a war was intense (more than 1000 deaths).
+We also performed a similar analysis on a new derived variable `intense_war`, which indicates whether or not a war caused more than 1000 deaths. This is to see if the presence of oil might make a country more likely to be involved in an intense war. 
 
 <!--TODO: bar plot instead of this table?-->
 _ATE results after propensity score matching. Confidence intervals were calculated with bootstrap sampling_
@@ -179,7 +179,8 @@ _ATE results after propensity score matching. Confidence intervals were calculat
 |Without `gini`|`fuelexp > 33`|`intense_war`|0.26|0.181, 0.34|
 
 <!-- like skip -->\
-All ATE scores are above zero, even if we take the confidence intervals into account.
+All ATE scores are above zero, even if we take the confidence intervals into account. Though the values are quite low, this means that being oil-dependent (or having a large share of fuel exports) *does* slightly increase the likelihood of being involved in a war. The highest ATE scores actually occur on the `intense_war` outcome variable, which means that, under equal preconditions, oil increases the likelihood of undergoing an intense war. The correlation is weak, but still statistically significant.
+
 ## Conclusion: Oil - Blessing or Curse?
 
 # Data Sources
