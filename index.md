@@ -22,10 +22,6 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/EIA_petroleum_consumpt
 
 https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Opecrev.gif/1280px-Opecrev.gif
 
-**TODO: add heatmaps**
-
-
-[<img src="img/year_heatmap_fuelexp.png" width=200 />](img/year_heatmap_fuelexp.png) [<img src="img/year_heatmap_infant.png" width=200 />](img/year_heatmap_fuelexp.png) [<img src="img/year_heatmap_illiteracy.png" width=200 />](img/year_heatmap_fuelexp.png) [<img src="img/year_heatmap_life.png" width=200 />](img/year_heatmap_fuelexp.png)
 
 
 ## Section 1: The impact of oil on population well-being and social inequality
@@ -33,6 +29,7 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Opecrev.gif/1280px-Ope
 First of all, we should make a distinction between **oil-rich** and **oil-dependent** countries. We consider a country to be oil-rich if it simply has a lot of oil on its territory. Oil-dependent countries, however, are those in which a large portion of GDP (> 33%) depends on the sale of oil. Canada, for example, being among the [top-5 oil exporters](https://en.wikipedia.org/wiki/List_of_countries_by_oil_exports) in the world, is oil-rich, but not oil-dependent. Saudi Arabia is both.
 
 ---
+
 
 With oil being a possible contributor to the so-called "[Resource Curse](https://en.wikipedia.org/wiki/Resource_curse)", it can bring great wealth to a country's people, but also conflicts and instability. Let's look at which countries were at war between 1961 and 2000. 
 
@@ -66,10 +63,15 @@ From the confusion matrix above we can immediately pick out some of the obvious 
 
 The correlation with the Gini score is positive, suggesting that oil and fuel overall lead to a slight improvement in a population's wellbeing. In the long term, this intuitively makes sense: if we look at a time span of four decades, it's unlikely that a country was at war for most of those years and, all other things being equal, it is probably better to *have* oil than to *not* have it.
 
-So, really, the question that we should be asking is: **given equal preconditions, does having oil make a country more likely to be involved in a war?**
+The heatmap below shows some key indicators of wellbeing in relation to fuel exports in oil-dependent countries. This reiterates the point above that oil/fuel exports don't necessarily impact a population's wellbeing negatively, in fact the opposite is likely to be true, depending on the circumstances. 
+
+Given the many complex factors that come into play during conflicts, however, we cannot really jump to conclusions by looking at some raw correlations. So, really, the question that we should be asking is: **given equal preconditions, does having oil make a country more likely to be involved in a war?**
 
 Again, this requires a few clarifications: we defined a country as *being involved in a war* when it had a war *on its territory* in a given year. 
 
+
+![](img/unique_heatmap.png)
+_Heatmap of normalized life expectancy, infant mortality, illiteracy and fuel exports over time for oil-dependent countries._
 
 ## Section 2: Let's look away from oil for a bit - predicting wars
 
