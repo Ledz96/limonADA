@@ -90,10 +90,10 @@ Given that historical data for countries' Gini scores is not always complete, we
 _F1 scores for both Random Forest models_
 
 | Without `gini` | With `gini` |
-|---------------:|------------:|
+|----------------|-------------|
 | 0.89           | 0.83        |
 
-\
+<!-- like skip -->\
 In the case without the `gini` feature, we can see the classification in the table below. Unfortunately, the description for `lpopns` was not available, but it is likely a quantity related to the population size. Interestingly enough, the very first feature, `sxpnew`, *could* be related to oil exports, though we can't conclude this without looking more into detail.
 
 _Top features for the model without `gini`_
@@ -107,7 +107,7 @@ _Top features for the model without `gini`_
 | trade     |    0.0319749 | Trade as % of GDP                              |
 | expgdp    |    0.0316218 | Goods/services export as % of GDP              |
 
-\
+<!-- like skip -->\
 Below is the classification for the model *with* the `gini` feature. We can see a little bit of overlap with the previous model, though this time ethnic heterogeneity and illiteracy are considered to be the top predictors of war. Surprisingly, `gini` itself is not present in the table.
 
 _Top features for the model with `gini`_
@@ -121,16 +121,66 @@ _Top features for the model with `gini`_
 | trade      |    0.0344304 | Trade as % of GDP                 |
 | expgdp     |    0.0338172 | Goods/services export as % of GDP |
 
-\
+<!-- like skip -->\
 Is there anything missing from these two tables? We trained our model to predict wars, so where are `fuelexp` (fuel exports as % of GDP) and `oil` (whether oil exports are more than 33% of GDP)? According to these models, they are not good predictors when it comes to war. Again though, this makes sense: many wars have been fought over reasons other than oil or fuel and not all exporters of these resources experienced wars.
 
 Now that we know what the top predictors of a war are, we can use them to match countries with similar preconditions. To state our question more precisely now: **given two countries with similar predictors of war, does being oil-dependent increase the likelihood of being involved in a war?**
 
 ## Section 3: Oil and likelihood of war in a country 
 
+In order to match countries with similar preconditions, we computed propensity scores with Logistic Regression, using one of the following as the classification variable:
+* `oil` (oil exports > 33% GDP)
+* `fuelexp > 33`, i.e. a derived binary variable for whether fuel exports are larger than 33% of GDP.
+
+Once this was done, we matched country-year pairs based on the smallest difference in propensity scores. The classification variable mentioned above was used to split countries into a **treatment** and **control** group, which we used to form pairs with similar propensities but opposite classification.
+
+_Example of matched country-year pairs_
+
+| Country 1 | Year 1 | Country 2 | Year 2 |
+|:----------|:------:|:----------|:------:|
+| Algeria | 1963 | Mongolia | 1996 |
+| Angola | 1991 | Singapore | 1981 |
+| Cameroon | 1989 | Mozambique | 1978 |
+| Ecuador | 1994 | South Vietnam | 1964 |
+| Egypt | 1998 | Mauritania | 1967 |
+| Gabon | 1970 | Malaysia | 1968 |
+| Indonesia | 1984 | Senegal | 1978 |
+| Iran | 1980 | Taiwan | 1997 |
+
+<!-- like skip -->\
+In order to assess the quality of our matches, we compared the distributions of our predictor features from the previous section, before and after matching. Here is an example:
 
 
-## Conclusion: Blessing or Curse?
+![](img/illit_match.png)
+_`illiteracy` feature before and after matching based on propensity scores_
+
+As we can see, the distributions of treatment and control groups became more similar to each other after the matching was done. We observed similar improvements for all predictor features, on both the datasets with and without `gini`.
+
+After matching on propensity scores, we calculated the [Average Treatment Effect](https://en.wikipedia.org/wiki/Average_treatment_effect) (ATE).
+
+$$ATE = \frac{1}{N} \sum_i^N y_{treat}^{(i)} - y_{\neg treat}^{(i)}$$
+
+Here $y$ represents whether or not a country was at war in a given year (`war` variable). $treat$ and $\neg treat$ indicate whether the country-year pair belongs to the treatment or control group. The ATE represents the average difference in outcome for all paired elements. If the treatment (`oil`/`fuelexp > 33`) causes war, then the ATE will be closer to 1. If it doesn't it will be closer to zero.
+
+We also performed a similar analysis on a new derived variable `intense_war`, which indicates whether or not a war was intense (more than 1000 deaths).
+
+<!--TODO: bar plot instead of this table?-->
+_ATE results after propensity score matching. Confidence intervals were calculated with bootstrap sampling_
+
+|Dataset|Treatment|Outcome|ATE|95% Confidence|
+|--|--|--|--|--|
+|With `gini`|`oil`|`war`|0.185|0.116, 0.248|
+|Without `gini`|`oil`|`war`|0.0938|0.0501, 0.134|
+|With `gini`|`fuelexp > 33`|`war`|0.157|0.037, 0.259|
+|Without `gini`|`fuelexp > 33`|`war`|0.178|0.121, 0.238|
+|With `gini`|`oil`|`intense_war`|0.258|0.166, 0.354|
+|Without `gini`|`oil`|`intense_war`|0.167|0.111, 0.229|
+|With `gini`|`fuelexp > 33`|`intense_war`|0.213|0.0648, 0.361|
+|Without `gini`|`fuelexp > 33`|`intense_war`|0.26|0.181, 0.34|
+
+<!-- like skip -->\
+
+## Conclusion: Oil - Blessing or Curse?
 
 # Data Sources
 1. [Muchlinski et al., _Comparing Random Forest with Logistic Regression for Predicting Class-Imbalanced Civil War Onset Data_](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KRKWK8)
