@@ -12,7 +12,7 @@ In this data story, we will therefore attempt to back this common perception up 
 
 In order to complete the aforementioned task, we have combined data from multiple datasets, gathering information over world countries in a timespan going from 1961 to 1999: this choice springs from the fact that this period represents a conosistent intersection between timespans of multiple dataset. 
 
-In the first section, we will use data provided by ... database to find out whether or not oil is correlated to social issues in a country. In particular, we will take into account factors such as illiteracy, life expectancy, and gini score. In case a correlation is found, we will then dive deeper, and wonder whether oil can be cause of these issues.
+In the first section, we will use data provided by ... database to find out whether or not oil is correlated to social issues in a country. In particular, we will take into account factors such as illiteracy, life expectancy, and [Gini coefficient](https://en.wikipedia.org/wiki/Gini_coefficient). In case a correlation is found, we will then dive deeper, and wonder whether oil can be cause of these issues.
 
 In the second section, we will take inspiration from _insert civil war paper_ , and try to build a predictor for the presence of war in a country: this will serve the purpose of identifying the most influential variables for this event, as they will be needed for the following part.
 
@@ -54,20 +54,18 @@ Visual inspection is not enough to make conclusions, though, so let's warm up ou
 * `infant`: infant mortality
 * `intensity_level`: (categorical) intensity of the war, if any.
 * `cumulative_intensity`: (categorical) like `intensity_level`, but accumulated across years and capped at a maximum value.
-* `gini`: Gini score for the country, as a measure of income inequality.
+* `gini`: gini coefficient for the country, as a measure of income inequality.
 
 ![Heatmap](img/heatmap.png)
 _Statistical correlation between variables relating to wealth and wellbeing of a population._
 
-From the confusion matrix above we can immediately pick out some of the obvious correlations, like illiteracy and infant mortality with life expectancy. Oil and fuel exports, however, don't seem to correlate much with anything, except for each other (obviously) and the Gini score. 
+From the confusion matrix above we can immediately pick out some of the obvious correlations, like illiteracy and infant mortality with life expectancy. Oil and fuel exports, however, don't seem to correlate much with anything, except for each other (obviously) and the gini coefficient. 
 
-The correlation with the Gini score is positive, suggesting that oil and fuel overall lead to a slight improvement in a population's wellbeing. In the long term, this intuitively makes sense: if we look at a time span of four decades, it's unlikely that a country was at war for most of those years and, all other things being equal, it is probably better to *have* oil than to *not* have it.
+The correlation with the gini coefficient is positive, suggesting that oil and fuel overall lead to a slight improvement in a population's wellbeing. In the long term, this intuitively makes sense: if we look at a time span of four decades, it's unlikely that a country was at war for most of those years and, all other things being equal, it is probably better to *have* oil than to *not* have it.
 
 The heatmap below shows some key indicators of wellbeing in relation to fuel exports in oil-dependent countries. This reiterates the point above that oil/fuel exports don't necessarily impact a population's wellbeing negatively, in fact the opposite is likely to be true, depending on the circumstances. 
 
-Given the many complex factors that come into play during conflicts, however, we cannot really jump to conclusions by looking at some raw correlations. So, really, the question that we should be asking is: **given equal preconditions, does having oil make a country more likely to be involved in a war?**
-
-Again, this requires a few clarifications: we defined a country as *being involved in a war* when it had a war *on its territory* in a given year. 
+Given the many complex factors that come into play during conflicts, however, we cannot really jump to conclusions by looking at some raw correlations. So, really, the question that we should be asking is: **given equal preconditions, does having oil make a country more likely to be involved in a war?** 
 
 
 ![](img/unique_heatmap.png)
@@ -75,11 +73,61 @@ _Heatmap of normalized life expectancy, infant mortality, illiteracy and fuel ex
 
 ## Section 2: Let's look away from oil for a bit - predicting wars
 
+The question we asked above requires a couple clarifications: 
+1. How do we define **being involved in a war**?
+1. What **preconditions** do we use to compare countries?
+
+For number 1, we define a country as *being involved in a war* when it has a war *on its territory* in a given year. For number 2, instead, we do the following, inspired by [*Muchlinski et al.*](#data-sources):
+
+1. Train a Random Forest algorithm to predict whether or not a country will be involved in a war during a given year.
+1. Rank dataset features by their importance, expressed as their normalized gini score.
+1. Take the top *N* features that account for 25% of the total importance. That is, *N* is defined such that the sum of the importances of the top *N* features should be at least 0.25 (since importances are normalized and sum to 1).
+
+We performed this analysis on most of the features that [*Muchlinski et al*](#data-sources) used in their analysis, though we had to remove features relating to train a model that made sense. We also removed some polynomial features (e.g. "square of primary commodity exports over GDP"), as these are not generally required in Random Forest models.
+
+Given that historical data for countries' Gini scores is not always complete, we trained our model on a dataset with and without the `gini` feature. The table below shows our F1 scores for the two models: both are fairly high, so we can assume that our fit is accurate and that the features identified as most important are really meaningful.
+
+_F1 scores for both Random Forest models_
+| Without `gini` | With `gini` |
+|----------------|-------------|
+| 0.89           | 0.83        |
+
+
+In the case without the `gini` feature, we can see the classification in the table below. Unfortunately, the description for `lpopns` was not available, but it is likely a quantity related to the population size. Interestingly enough, the very first feature, `sxpnew`, *could* be related to oil exports, though we can't conclude this without looking more into detail.
+
+_Top features for the model without `gini`_
+| Feature   |   Importance | Description                                    |
+|:----------|-------------:|:-----------------------------------------------|
+| sxpnew    |    0.0655414 | Primary commodity exports/GDP                  |
+| lpopns    |    0.0536241 | N/A                                            |
+| agexp     |    0.0342671 | Agricultural raw materials/merchandise exports |
+| numlang   |    0.0331492 | Number of languages in Ethnologue              |
+| trade     |    0.0319749 | Trade as % of GDP                              |
+| expgdp    |    0.0316218 | Goods/services export as % of GDP              |
+
+Below is the classification for the model *with* the `gini` feature. We can see a little bit of overlap with the previous model, though this time ethnic heterogeneity and illiteracy are considered to be the top predictors of war. Surprisingly, `gini` itself is not present in the table.
+
+_Top features for the model with `gini`_
+| Feature    |   Importance | Description                       |
+|:-----------|-------------:|:----------------------------------|
+| ehet       |    0.0551632 | Ethnic heterogeneity index        |
+| illiteracy |    0.053599  | Illiteracy rate                   |
+| sxpnew     |    0.0480203 | Primary commodity exports/GDP     |
+| lpopns     |    0.0425471 | N/A                               |
+| trade      |    0.0344304 | Trade as % of GDP                 |
+| expgdp     |    0.0338172 | Goods/services export as % of GDP |
+
+Is there anything missing from these two tables? We trained our model to predict wars, so where are `fuelexp` (fuel exports as % of GDP) and `oil` (whether oil exports are more than 33% of GDP)? According to these models, they are not good predictors when it comes to war. Again though, this makes sense: many wars have been fought over reasons other than oil or fuel and not all exporters of these resources experienced wars.
+
+Now that we know what the top predictors of a war are, we can use them to match countries with similar preconditions. To state our question more precisely now: **given two countries with similar predictors of war, does being oil-dependent increase the likelihood of being involved in a war?**
+
 ## Section 3: Oil and likelihood of war in a country 
 
-## Conclusion: Is oil a cause of problems for a country?
 
-# Sources
+
+## Conclusion: Blessing or Curse?
+
+# Data Sources
 1. [Muchlinski et al., _Comparing Random Forest with Logistic Regression for Predicting Class-Imbalanced Civil War Onset Data_](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KRKWK8)
 1. [World Inequality Database](https://wid.world/)
 1. [UCDP/PRIO](https://ucdp.uu.se/)
