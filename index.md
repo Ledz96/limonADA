@@ -92,8 +92,7 @@ _F1 scores for both Random Forest models_
 | Without `gini` | With `gini` |
 |---------------:|------------:|
 | 0.89           | 0.83        |
-
-
+---
 In the case without the `gini` feature, we can see the classification in the table below. Unfortunately, the description for `lpopns` was not available, but it is likely a quantity related to the population size. Interestingly enough, the very first feature, `sxpnew`, *could* be related to oil exports, though we can't conclude this without looking more into detail.
 
 _Top features for the model without `gini`_
@@ -106,19 +105,21 @@ _Top features for the model without `gini`_
 | numlang   |    0.0331492 | Number of languages in Ethnologue              |
 | trade     |    0.0319749 | Trade as % of GDP                              |
 | expgdp    |    0.0316218 | Goods/services export as % of GDP              |
+---
 
 Below is the classification for the model *with* the `gini` feature. We can see a little bit of overlap with the previous model, though this time ethnic heterogeneity and illiteracy are considered to be the top predictors of war. Surprisingly, `gini` itself is not present in the table.
 
 _Top features for the model with `gini`_
 
 | Feature    |   Importance | Description                       |
-|:-----------|-------------:|:----------------------------------|
+|:-----------|:-------------|:----------------------------------|
 | ehet       |    0.0551632 | Ethnic heterogeneity index        |
 | illiteracy |    0.053599  | Illiteracy rate                   |
 | sxpnew     |    0.0480203 | Primary commodity exports/GDP     |
 | lpopns     |    0.0425471 | N/A                               |
 | trade      |    0.0344304 | Trade as % of GDP                 |
 | expgdp     |    0.0338172 | Goods/services export as % of GDP |
+---
 
 Is there anything missing from these two tables? We trained our model to predict wars, so where are `fuelexp` (fuel exports as % of GDP) and `oil` (whether oil exports are more than 33% of GDP)? According to these models, they are not good predictors when it comes to war. Again though, this makes sense: many wars have been fought over reasons other than oil or fuel and not all exporters of these resources experienced wars.
 
