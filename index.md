@@ -90,7 +90,7 @@ Given that historical data for countries' Gini scores is not always complete, we
 _F1 scores for both Random Forest models_
 
 | Without `gini` | With `gini` |
-|----------------|-------------|
+|---------------:|------------:|
 | 0.89           | 0.83        |
 
 
@@ -99,7 +99,7 @@ In the case without the `gini` feature, we can see the classification in the tab
 _Top features for the model without `gini`_
 
 | Feature   |   Importance | Description                                    |
-|:----------|-------------:|:-----------------------------------------------|
+|:----------|:-------------|:-----------------------------------------------|
 | sxpnew    |    0.0655414 | Primary commodity exports/GDP                  |
 | lpopns    |    0.0536241 | N/A                                            |
 | agexp     |    0.0342671 | Agricultural raw materials/merchandise exports |
