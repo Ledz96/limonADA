@@ -14,7 +14,7 @@ In order to complete the aforementioned task, we have combined data from multipl
 
 In the first section, we will use data provided by ... database to find out whether or not oil is correlated to social issues in a country. In particular, we will take into account factors such as illiteracy, life expectancy, and [Gini coefficient](https://en.wikipedia.org/wiki/Gini_coefficient). In case a correlation is found, we will then dive deeper, and wonder whether oil can be cause of these issues.
 
-In the second section, we will take inspiration from _insert civil war paper_ , and try to build a predictor for the presence of war in a country: this will serve the purpose of identifying the most influential variables for this event, as they will be needed for the following part.
+In the second section, we will take inspiration from [_Muchlinski et al_](#data-sources) , and try to build a predictor for the presence of war in a country: this will serve the purpose of identifying the most influential variables for this event, as they will be needed for the following part.
 
 In the third and final section, we will try to investigate the role of oil in the outburst of a conflict. In particular, we will try to understand whether or not the large availability of oil in a country can influence the probability of a war outbreaking in that location.
 
