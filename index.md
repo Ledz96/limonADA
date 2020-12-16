@@ -71,7 +71,7 @@ Again, this requires a few clarifications: we defined a country as *being involv
 
 
 ![](img/unique_heatmap.png)
-_Heatmap of normalized life expectancy, infant mortality, illiteracy and fuel exports over time for oil-dependent countries._
+_Heatmap of normalized life expectancy, infant mortality, illiteracy and fuel exports over time for oil-dependent countries. Missing data in white_
 
 ## Section 2: Let's look away from oil for a bit - predicting wars
 
