@@ -24,6 +24,10 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Opecrev.gif/1280px-Ope
 
 **TODO: add heatmaps**
 
+
+[<img src="img/year_heatmap_fuelexp.png" width=200 />](img/year_heatmap_fuelexp.png) [<img src="img/year_heatmap_infant.png" width=200 />](img/year_heatmap_fuelexp.png) [<img src="img/year_heatmap_illiteracy.png" width=200 />](img/year_heatmap_fuelexp.png) [<img src="img/year_heatmap_life.png" width=200 />](img/year_heatmap_fuelexp.png)
+
+
 ## Section 1: The impact of oil on population well-being and social inequality
 
 First of all, we should make a distinction between **oil-rich** and **oil-dependent** countries. We consider a country to be oil-rich if it simply has a lot of oil on its territory. Oil-dependent countries, however, are those in which a large portion of GDP (> 33%) depends on the sale of oil. Canada, for example, being among the [top-5 oil exporters](https://en.wikipedia.org/wiki/List_of_countries_by_oil_exports) in the world, is oil-rich, but not oil-dependent. Saudi Arabia is both.
