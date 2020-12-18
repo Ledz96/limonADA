@@ -179,13 +179,13 @@ _ATE results after propensity score matching. Confidence intervals were calculat
 |Without `gini`|`oil`|`war`|0.0938|0.0501, 0.134|
 |With `gini`|`fuelexp > 33`|`war`|0.157|0.037, 0.259|
 |Without `gini`|`fuelexp > 33`|`war`|0.178|0.121, 0.238|
-|With `gini`|`oil`|`intense_war`|0.258|0.166, 0.354|
-|Without `gini`|`oil`|`intense_war`|0.167|0.111, 0.229|
-|With `gini`|`fuelexp > 33`|`intense_war`|0.213|0.0648, 0.361|
-|Without `gini`|`fuelexp > 33`|`intense_war`|0.26|0.181, 0.34|
+|With `gini`|`oil`|`intense_war`|0.0728|0.0331, 0.113|
+|Without `gini`|`oil`|`intense_war`|0.0733|0.0488, 0.099|
+|With `gini`|`fuelexp > 33`|`intense_war`|0.0556|-0.0093, 0.12|
+|Without `gini`|`fuelexp > 33`|`intense_war`|0.0822|0.0521, 0.118|
 
 <!-- like skip -->\
-All ATE scores are above zero, even if we take the confidence intervals into account. Though the values are quite low, this means that being oil-dependent (or having a large share of fuel exports) *does* slightly increase the likelihood of being involved in a war. The highest ATE scores actually occur on the `intense_war` outcome variable, which means that, under equal preconditions, oil increases the likelihood of undergoing an intense war. The correlation is weak, but still statistically significant.
+All ATE scores are above zero, even if we take the confidence intervals into account. Though the values are quite low, this means that being oil-dependent (or having a large share of fuel exports) *does* slightly increase the likelihood of being involved in a war. The highest ATE scores actually occur on the `war` outcome variable, which means that, under equal preconditions, oil does not increase the likelihood of undergoing an intense war. The correlation is weak, but still statistically significant.
 
 ## Conclusion: Oil - Blessing or Curse?
 
