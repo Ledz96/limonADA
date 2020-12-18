@@ -2,7 +2,7 @@
 
 ## Background and Creative Extension
 
-The [*Muchlinski et al*](#data-sources) tries to predict the onset of civil wars based 
+The [*Muchlinski et al*](#data-sources) paper tries to predict the onset of civil wars based 
 on a variety of features describing a country in a given year. In order to achieve this, 
 they use a Random Forest classifier, which, according to their results, performs far better
 than the previously-established Logistic Regression methods. 
