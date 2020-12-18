@@ -6,7 +6,7 @@ During the course of past century, oil has taken a central spot in the World's e
 
 Solarized dark             |  Solarized Ocean
 :-------------------------:|:-------------------------:
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/EIA_petroleum_consumption_of_selected_nations_1960-2005.png/800px-EIA_petroleum_consumption_of_selected_nations_1960-2005.png" alt="petroleum_consumption)  |  ![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/EIA_petroleum_consumption_of_selected_nations_1960-2005.png/800px-EIA_petroleum_consumption_of_selected_nations_1960-2005.png" alt="petroleum_consumption)
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/EIA_petroleum_consumption_of_selected_nations_1960-2005.png/800px-EIA_petroleum_consumption_of_selected_nations_1960-2005.png)  |  ![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/EIA_petroleum_consumption_of_selected_nations_1960-2005.png/800px-EIA_petroleum_consumption_of_selected_nations_1960-2005.png)
 
 
 
