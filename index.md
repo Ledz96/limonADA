@@ -6,7 +6,7 @@ During the course of past century, oil has taken a central spot in the World's e
 
 -- grafico per consumo di petrolio --
 
-Great oil exporters, however, have often been linked with controversies. The 2003 invasion of Iraq (3rd exporter in 2014 \[5\]), for instance, officially justified with the concern over presence of weapons of mass distruction, is widely attributed to economical factors, related to the abundance of oil in the territory . More recently, the poor working conditions and dramatic economical and social inequality in Qatar (14th oil exporter in 2014 \[5\]) have been prominent in the news, following its choice as the host country for the 2022 World Cup. Indeed, it is not hard to find more similar examples.
+Great oil exporters, however, have often been linked with controversies. The 2003 invasion of Iraq ([3rd exporter in 2014](https://www.cia.gov/library/publications/the-world-factbook/rankorder/2242rank.html)), for instance, officially justified with the concern over presence of weapons of mass distruction, is widely attributed to economical factors, related to the abundance of oil in the territory. More recently, the poor working conditions and dramatic economical and social inequality in Qatar ([14th oil exporter in 2014](https://www.cia.gov/library/publications/the-world-factbook/rankorder/2242rank.html)) have been prominent in the news, following its choice as the host country for the 2022 World Cup. Indeed, it is not hard to find more similar examples.
 
 In this data story, we will therefore attempt to back this common perception up with data: we will attempt to determine whether or not oil-rich countries are in fact more vulnerable to social inequality, poor life conditions, and war.
 
