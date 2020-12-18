@@ -40,7 +40,7 @@ _Countries at war (light blue) between 1961 and 2000 (missing data in white)_
 To get a qualitative sense of whether wars in in the latter half of the previous century were mostly fought in oil-dependent countries, let's compare the above animation with the image below.
 
 ![](img/oil_country_map.png)
-_Countries whose oil exports amount to more than 33% of their GDP (missing data in grey)._
+_Countries whose oil exports amount to more than 33% of their GDP in at least one year (missing data in grey)._
 
 Is there an overlap? Yes, we can clearly see (as expected) some connections in the Middle East and North Africa, along with Venezuela, Angola and so on. In fact, it is hard to find an oil-dependent country (besides Norway) that *didn't* live through a conflict since the 1960s.
 
