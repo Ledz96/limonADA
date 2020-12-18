@@ -7,6 +7,8 @@ During the course of past century, oil has taken a central spot in the World's e
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/EIA_petroleum_consumption_of_selected_nations_1960-2005.png/800px-EIA_petroleum_consumption_of_selected_nations_1960-2005.png" alt="petroleum_consumption" width="500"/>
 Oil consumption for 5 countries in the 1960-2005 period. Source: [wikimedia foundation](https://en.wikipedia.org/wiki/List_of_countries_by_oil_consumption#/media/File:EIA_petroleum_consumption_of_selected_nations_1960-2008.png)
 
+[this is youtube](https://youtube.com)
+
 -- grafico per consumo di petrolio --
 
 Great oil exporters, however, have often been linked with controversies. The 2003 invasion of Iraq ([3rd exporter in 2014](https://www.cia.gov/library/publications/the-world-factbook/rankorder/2242rank.html)), for instance, officially justified with the concern over presence of weapons of mass distruction, is widely attributed to economical factors, related to the abundance of oil in the territory. More recently, the poor working conditions and dramatic economical and social inequality in Qatar ([14th oil exporter in 2014](https://www.cia.gov/library/publications/the-world-factbook/rankorder/2242rank.html)) have been prominent in the news, following its choice as the host country for the 2022 World Cup. Indeed, it is not hard to find more similar examples.
