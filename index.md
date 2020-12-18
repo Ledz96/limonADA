@@ -10,7 +10,7 @@ Oil consumption for 5 countries in the 1960-2005 period. Source:
 [this is youtube](https://youtube.com)
 
 
-[stocazzo](https://en.wikipedia.org/wiki/List_of_countries_by_oil_consumption#/media/File:EIA_petroleum_consumption_of_selected_nations_1960-2008.png)
+[Wikimedia](https://en.wikipedia.org/wiki/List_of_countries_by_oil_consumption#/media/File:EIA_petroleum_consumption_of_selected_nations_1960-2008.png)
 
 -- grafico per consumo di petrolio --
 
