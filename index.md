@@ -89,7 +89,7 @@ We performed this analysis on most of the features that [*Muchlinski et al*](#da
 
 Given that historical data for countries' Gini scores is not always complete, we trained our model on a dataset with and without the `gini` feature. The table below shows our F1 scores for the two models: 
 
-_F1 scores for both Random Forest models_
+_F1 scores for both Random Forest models across multiple executions. Because of the randomness, the values may vary_
 
 | Dataset        | F-score     | Accuracy   |
 |----------------|-------------|------------|
