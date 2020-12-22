@@ -74,7 +74,7 @@ _Statistical correlation between variables relating to wealth and wellbeing of a
 
 From the correlation matrix above we can immediately pick out some of the obvious correlations, like illiteracy and infant mortality with life expectancy. Oil and fuel exports, however, don't seem to correlate much with anything, except for each other (obviously) and the gini coefficient. 
 
-The correlation with the gini coefficient is positive, suggesting that oil and fuel overall lead to a slight improvement in a population's wellbeing. In the long term, this intuitively makes sense: if we look at a time span of four decades, it's unlikely that a country was at war for most of those years and, all other things being equal, it is probably better to *have* oil than to *not* have it.
+The correlation with the Gini coefficient is positive, suggesting that oil and fuel overall lead to a slightly higher inequality in the distribution of resources. This is coherent with the common perception, according to which the oil resources are controlled by few powerful individuals.
 
 The heatmap below shows some key indicators of wellbeing in relation to fuel exports in oil-dependent countries. This reiterates the point above that oil/fuel exports don't necessarily impact a population's wellbeing negatively, in fact the opposite is likely to be true, depending on the circumstances. 
 
